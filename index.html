@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+   
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+
+    <style>
+      body {
+        background-image: url("https://mcdn.wallpapersafari.com/medium/5/94/unQymT.jpg");
+        
+      }
+      .mapouter {
+        position: relative;
+        text-align: right;
+        height: 500px;
+        width: 600px;
+      }
+
+      .gmap_canvas {
+        overflow: hidden;
+        background: none !important;
+        height: 500px;
+        width: 600px;
+      }
+      .search {
+        text-align: center;
+        width: 100%;
+        margin-top: 30px;
+      }
+
+      .search > input {
+        font-size: 30px;
+        font-style: oblique;
+        border-radius: 10px;
+        padding: 5px;
+      }
+
+      button {
+        font-size: 30px;
+        border-radius: 10px;
+        padding: 5px;
+      }
+
+      #container {
+        width: fit-content;
+        height: fit-content;
+        margin-top: 20px;
+        font-size: 25px;
+        padding: 20px;
+        margin-left: 30px;
+        box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px,
+          rgb(51, 51, 51) 0px 0px 0px 3px;
+      }
+      .display {
+        display: flex;
+        gap: 30px;
+        margin-top: 20px;
+        justify-content: space-between;
+        width: 80%;
+      }
+    </style>
+  </head>
+  <body onload="getLocation()">
+    <div class="search">
+      <input type="text" placeholder="Enter City Name" id="query" />
+      <button onclick="getData()">Search City</button>
+    </div>
+
+    <div class="display">
+      <div id="container"></div>
+
+      <div class="mapouter">
+        <div class="gmap_canvas">
+          <iframe
+            width="600"
+            height="500"
+            id="gmap_canvas"
+            frameborder="0"
+            scrolling="no"
+            marginheight="0"
+            marginwidth="0"
+          ></iframe>
+        </div>
+      </div>
+    </div>
+
+    
+  </body>
+</html>
+
+<script src="index.js"></script>
